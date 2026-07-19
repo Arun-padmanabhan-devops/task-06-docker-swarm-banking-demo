@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Character Encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>ABC Bank Portal</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+
+            <h1>🏦 ABC Bank</h1>
+
+            <p>Customer Banking Portal</p>
+
+        </header>
+
+        <!-- Customer Information -->
+        <section class="card">
+
+            <h2>Customer Information</h2>
+
+            <p><strong>Name:</strong> <%= customerName %></p>
+
+            <p><strong>Account Number:</strong> <%= accountNumber %></p>
+
+            <p><strong>Account Type:</strong> <%= accountType %></p>
+
+            <p><strong>Available Balance:</strong> <%= balance %></p>
+
+        </section>
+
+        <!-- Recent Transactions -->
+        <section class="card">
+
+            <h2>Recent Transactions</h2>
+
+            <ul>
+
+                <li>✅ Salary Credit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + ₹75,000</li>
+
+                <li>✅ Electricity Bill &nbsp;&nbsp;&nbsp;&nbsp; - ₹2,350</li>
+
+                <li>✅ Grocery Store &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ₹1,250</li>
+
+                <li>✅ Netflix Subscription - ₹649</li>
+
+            </ul>
+
+        </section>
+
+        <!-- Docker Swarm Information -->
+        <section class="card">
+
+            <h2>Application Information</h2>
+
+            <table>
+
+                <tr>
+                    <td>Environment</td>
+                    <td><%= environment %></td>
+                </tr>
+
+                <tr>
+                    <td>Application Version</td>
+                    <td><%= version %></td>
+                </tr>
+
+                <tr>
+                    <td>Service Name</td>
+                    <td><%= serviceName %></td>
+                </tr>
+
+                <tr>
+                    <td>Container Hostname</td>
+                    <td><%= hostname %></td>
+                </tr>
+
+                <tr>
+                    <td>Container ID</td>
+                    <td><%= containerId %></td>
+                </tr>
+
+                <tr>
+                    <td>Requests Served</td>
+                    <td><%= requests %></td>
+                </tr>
+
+                <tr>
+                    <td>Started At</td>
+                    <td><%= startedAt %></td>
+                </tr>
+
+                <tr>
+                    <td>Health Status</td>
+                    <td>🟢 <%= health %></td>
+                </tr>
+
+            </table>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>

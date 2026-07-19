@@ -1,0 +1,126 @@
+/* ===========================
+   Reset Default Browser Style
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================
+   Page Background
+=========================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fa;
+    color: #333;
+}
+
+/* ===========================
+   Main Container
+=========================== */
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+header {
+    background: #0047ab;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.card {
+    background: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Card Heading */
+
+.card h2 {
+    color: #0047ab;
+    margin-bottom: 15px;
+}
+
+/* ===========================
+   Transactions
+=========================== */
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Remove last border */
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+/* ===========================
+   Table
+=========================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* First Column */
+
+td:first-child {
+    font-weight: bold;
+    width: 35%;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 95%;
+    }
+
+    td {
+        display: block;
+        width: 100%;
+    }
+
+}
