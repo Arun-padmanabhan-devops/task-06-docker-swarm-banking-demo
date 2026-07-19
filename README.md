@@ -42,8 +42,7 @@ Docker Swarm automatically distributes incoming traffic among all containers, en
 Container orchestration is the automated management of containerized applications.
 Instead of manually starting, stopping, monitoring, and scaling containers, an orchestration platform performs these tasks automatically.
 
-
-# 💡 Docker Swarm Features:
+ Docker Swarm Features:
 
 | Feature | Description |
 |----------|-------------|
