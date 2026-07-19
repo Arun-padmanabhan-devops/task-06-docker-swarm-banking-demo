@@ -7,7 +7,6 @@
 # 📖 Assignment Overview
 
 Imagine our company has a web application.
-
 Initially, only a few users visit the website, so a single container is enough.
 
 ```text
@@ -41,16 +40,21 @@ Docker Swarm automatically distributes incoming traffic among all containers, en
 # 🎯 What is Container Orchestration?
 
 Container orchestration is the automated management of containerized applications.
-
 Instead of manually starting, stopping, monitoring, and scaling containers, an orchestration platform performs these tasks automatically.
 
-Docker Swarm provides features such as:
 
-- ⚖️ Load Balancing
-- 📈 Automatic Scaling
-- 🔄 Auto Healing
-- 🚀 Rolling Updates
-- 🔁 High Availability
+# 💡 Docker Swarm Features:
+
+| Feature | Description |
+|----------|-------------|
+| 🚀 Service Deployment | Deploy applications as services |
+| 📈 Scaling | Increase or decrease replicas |
+| ⚖️ Load Balancing | Distribute traffic across containers |
+| 🔄 Auto Healing | Replace failed containers automatically |
+| 🌐 Overlay Network | Enable communication between containers |
+| 🔁 Rolling Updates | Deploy new versions without downtime |
+| 💻 High Availability | Keep applications running continuously |
+
 
 ---
 
@@ -67,19 +71,15 @@ docker run ...
 Managing three containers may be simple.
 
 But imagine managing **100 containers**.
-
 Keeping track of:
-
 - Running containers
 - Failed containers
 - Scaling
 - Updates
 - Networking
-
 becomes difficult.
 
 Docker Swarm automates these tasks.
-
 It is Docker's built-in container orchestration platform.
 
 > **Note:** Kubernetes is more powerful and widely used in enterprise environments, but Docker Swarm is significantly easier for beginners to understand.
@@ -153,7 +153,7 @@ Create a simple **Node.js** web application.
 
 ## 📌 Part 2 — Deploy Using Docker Swarm
 
-Initialize Docker Swarm and deploy your application as a service.
+Initialize Docker Swarm and deploy application as a service.
 
 ### Tasks
 
@@ -198,30 +198,6 @@ Deploy a new version of the application without downtime.
 - Build a new Docker image
 - Perform a rolling update
 - Verify zero-downtime deployment
-
----
-
-## 📌 Part 6 — Documentation
-
-Prepare a complete project documentation.
-
-Include:
-
-
----
-
-
-# 💡 Docker Swarm Features Demonstrated
-
-| Feature | Description |
-|----------|-------------|
-| 🚀 Service Deployment | Deploy applications as services |
-| 📈 Scaling | Increase or decrease replicas |
-| ⚖️ Load Balancing | Distribute traffic across containers |
-| 🔄 Auto Healing | Replace failed containers automatically |
-| 🌐 Overlay Network | Enable communication between containers |
-| 🔁 Rolling Updates | Deploy new versions without downtime |
-| 💻 High Availability | Keep applications running continuously |
 
 ---
 
