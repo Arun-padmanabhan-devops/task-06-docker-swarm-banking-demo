@@ -6,7 +6,7 @@
 
 # 📖 Assignment Overview
 
-Imagine your company has a web application.
+Imagine our company has a web application.
 
 Initially, only a few users visit the website, so a single container is enough.
 
@@ -19,10 +19,7 @@ Initially, only a few users visit the website, so a single container is enough.
     └─────────────────┘
 ```
 
-As your application becomes popular, thousands of users begin accessing it simultaneously.
-
-A single container can no longer handle all the traffic.
-
+As our application becomes popular, thousands of users begin accessing it simultaneously, A single container can no longer handle all the traffic.
 Instead of running just one container, you deploy multiple copies (replicas).
 
 ```text
