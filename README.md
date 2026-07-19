@@ -1,3 +1,305 @@
+## Container Orchestration with Docker Swarm
+
+> **Objective:** Learn how Docker Swarm manages multiple containers automatically, enabling high availability, scalability, and zero-downtime deployments.
+
+---
+
+# 📖 Assignment Overview
+
+Imagine your company has a web application.
+
+Initially, only a few users visit the website, so a single container is enough.
+
+```text
+          Users
+            │
+            ▼
+    ┌─────────────────┐
+    │  Web Container  │
+    └─────────────────┘
+```
+
+As your application becomes popular, thousands of users begin accessing it simultaneously.
+
+A single container can no longer handle all the traffic.
+
+Instead of running just one container, you deploy multiple copies (replicas).
+
+```text
+                 Users
+                   │
+                   ▼
+          ┌────────────────┐
+          │ Docker Swarm   │
+          └────────────────┘
+          │      │      │
+          ▼      ▼      ▼
+     Container1 Container2 Container3
+```
+
+Docker Swarm automatically distributes incoming traffic among all containers, ensuring that no single container becomes overloaded.
+
+---
+
+# 🎯 What is Container Orchestration?
+
+Container orchestration is the automated management of containerized applications.
+
+Instead of manually starting, stopping, monitoring, and scaling containers, an orchestration platform performs these tasks automatically.
+
+Docker Swarm provides features such as:
+
+- ⚖️ Load Balancing
+- 📈 Automatic Scaling
+- 🔄 Auto Healing
+- 🚀 Rolling Updates
+- 🔁 High Availability
+
+---
+
+# 🤔 Why Docker Swarm?
+
+Without Docker Swarm, you would manually execute:
+
+```bash
+docker run ...
+docker run ...
+docker run ...
+```
+
+Managing three containers may be simple.
+
+But imagine managing **100 containers**.
+
+Keeping track of:
+
+- Running containers
+- Failed containers
+- Scaling
+- Updates
+- Networking
+
+becomes difficult.
+
+Docker Swarm automates these tasks.
+
+It is Docker's built-in container orchestration platform.
+
+> **Note:** Kubernetes is more powerful and widely used in enterprise environments, but Docker Swarm is significantly easier for beginners to understand.
+
+---
+
+# 📚 What Will You Learn?
+
+This assignment introduces production-level deployment concepts.
+
+Instead of:
+
+```bash
+docker run
+```
+
+you will use:
+
+```bash
+docker service create
+```
+
+Instead of running:
+
+```
+1 Container
+```
+
+you will deploy:
+
+```
+5 Replicas
+```
+
+Instead of manually restarting failed containers:
+
+```text
+Container crashes ❌
+
+↓
+
+Docker Swarm detects failure
+
+↓
+
+Automatically creates a replacement
+
+↓
+
+Application remains available
+```
+
+---
+
+# 🌦️ Real-World Scenario
+
+Imagine you developed a **Weather App**.
+
+Initially:
+
+```text
+Users
+
+  │
+
+  ▼
+
+Weather App
+
+  │
+
+  ▼
+
+1 Container
+```
+
+As traffic increases dramatically:
+
+```text
+                  Users
+                    │
+                    ▼
+            ┌────────────────┐
+            │ Docker Swarm   │
+            └────────────────┘
+              │   │   │   │   │
+              ▼   ▼   ▼   ▼   ▼
+           Container A
+           Container B
+           Container C
+           Container D
+           Container E
+```
+
+Now suppose **Container C** suddenly crashes.
+
+```text
+Container C ❌
+```
+
+Docker Swarm continuously monitors the desired state of the service.
+
+```text
+Desired Replicas = 5
+
+Running Replicas = 4
+
+↓
+
+Docker Swarm automatically creates
+
+↓
+
+New Container
+
+↓
+
+Running Replicas = 5 ✅
+```
+
+No manual intervention is required.
+
+---
+
+# 🛠️ Assignment Roadmap
+
+---
+
+## 📌 Part 1 — Build the Application
+
+Create a simple **Node.js** web application.
+
+### Tasks
+
+- Create a Node.js web server
+- Display the container hostname
+- Create a Dockerfile
+- Build the Docker image
+- Test the application locally
+
+---
+
+## 📌 Part 2 — Deploy Using Docker Swarm
+
+Initialize Docker Swarm and deploy your application as a service.
+
+### Tasks
+
+- Initialize Docker Swarm
+- Create an Overlay Network
+- Deploy the service
+- Verify **3 replicas** are running
+
+---
+
+## 📌 Part 3 — Scaling
+
+Learn how Docker Swarm scales services.
+
+### Tasks
+
+- Scale the service from **3** to **5 replicas**
+- Verify the updated replica count
+- Explain how Docker Swarm distributes traffic
+
+---
+
+## 📌 Part 4 — Auto Healing
+
+Understand Docker Swarm's self-healing capability.
+
+### Tasks
+
+- Manually stop or remove one running container
+- Observe Docker Swarm automatically creating a replacement
+- Verify the desired replica count is restored
+
+---
+
+## 📌 Part 5 — Rolling Update
+
+Deploy a new version of the application without downtime.
+
+### Tasks
+
+- Modify the application
+- Build a new Docker image
+- Perform a rolling update
+- Verify zero-downtime deployment
+
+---
+
+## 📌 Part 6 — Documentation
+
+Prepare a complete project documentation.
+
+Include:
+
+
+---
+
+
+# 💡 Docker Swarm Features Demonstrated
+
+| Feature | Description |
+|----------|-------------|
+| 🚀 Service Deployment | Deploy applications as services |
+| 📈 Scaling | Increase or decrease replicas |
+| ⚖️ Load Balancing | Distribute traffic across containers |
+| 🔄 Auto Healing | Replace failed containers automatically |
+| 🌐 Overlay Network | Enable communication between containers |
+| 🔁 Rolling Updates | Deploy new versions without downtime |
+| 💻 High Availability | Keep applications running continuously |
+
+---
+
+
 # 🏦 Docker Swarm Banking Portal
 
 A production-style banking portal deployed using **Docker Swarm** to demonstrate container orchestration concepts such as service deployment, replicas, load balancing, rolling updates, and self-healing.
@@ -290,7 +592,6 @@ _Add screenshot here_
 - Services
 - Replicas
 - Overlay Network
-- Routing Mesh
 - Load Balancing
 - Rolling Updates
 - Desired State
@@ -327,16 +628,7 @@ Docker Swarm provides these capabilities by maintaining the desired number of re
 
 ---
 
-# 🚀 Future Improvements
 
-- Add Redis
-- Add MySQL/PostgreSQL
-- Deploy on multiple Swarm nodes
-- Add Nginx Reverse Proxy
-- Add Prometheus & Grafana Monitoring
-- Deploy using GitHub Actions CI/CD
-
----
 
 # 👨‍💻 Author
 
